@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import { connect } from 'react-redux'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { addStuff } from '../../actions';
 import './AddStuff.css';
 
 class AddStuff extends Component {
-    state = {
-        name: "",
-        description: "",
-        amount: 0,
-        price: 0,
-    }
+    state = {...this.resetState};
 
     handleNameChange = (e) => {
         this.setState({
@@ -38,13 +35,21 @@ class AddStuff extends Component {
             amount,
             price
         })
+        this.setState({...this.resetState});
     };
+    resetState = {
+        name: "",
+        description: "",
+        amount: 0,
+        price: 0,
+    }
 
     render() {
         const { name, description, amount, price } = this.state;
 
         return (
-            <div className="addstuff">
+            <div className="addstuff col-md-8 col-sm-10">
+                <h1>Add Stuff</h1><br/>
                 <Form>
                     <FormGroup>
                         <Label for="name">Name</Label>
@@ -69,5 +74,12 @@ class AddStuff extends Component {
         )
     }
 }
+let mapStateToProps = () => { return {} };
+const mapDispatchToProps = dispatch => ({
+    handleAdd: item => dispatch(addStuff(item))
+});
 
-export default AddStuff;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(AddStuff);

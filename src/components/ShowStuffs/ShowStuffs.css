@@ -1,12 +1,11 @@
 .stuff-container {
-    width: 50%;
     align-items: center;
 }
 
 .stuff {
-    width: 100%;
     border: 1px solid #ced4da;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px 0px;
+    margin: 20px 0px;
+    padding: 15px 0px;
 }

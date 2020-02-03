@@ -17,27 +17,15 @@ class Layout extends Component {
             { name: "eee", description: "description5", price: 1, amount: 6},
         ]
     };
-    handleAdd = (newData) => {
-        this.setState({
-            data: [...this.state.data, newData]
-        });
-    };
-    handleRemove = (removeData) => {
-        const { data } = this.state;
-        const newData = data.filter(item => item !== removeData);
-        this.setState({
-            data: newData
-        });
-    };
+
     render() {
-        const { data } = this.state;
         return (
             <Router>
                 <div className="container-fluid layout">
                     <Header />
                     <div className="row body">
-                        <Route path="/showstuffs" component={() => <ShowStuffContainer data={data} handleRemove={this.handleRemove} /> }/>
-                        <Route path="/addstuff" component={() => <AddStuff handleAdd={this.handleAdd} />} />
+                        <Route path="/showstuffs" component={() => <ShowStuffContainer /> }/>
+                        <Route path="/addstuff" component={() => <AddStuff />} />
                     </div>
                 </div>
             </Router>
