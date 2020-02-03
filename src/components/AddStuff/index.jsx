@@ -5,7 +5,12 @@ import { addStuff } from '../../actions';
 import './AddStuff.css';
 
 class AddStuff extends Component {
-    state = {...this.resetState};
+    state = {
+        name: "",
+        description: "",
+        amount: 0,
+        price: 0
+    };
 
     handleNameChange = (e) => {
         this.setState({
@@ -35,14 +40,13 @@ class AddStuff extends Component {
             amount,
             price
         })
-        this.setState({...this.resetState});
+        this.setState({
+            name: "",
+            description: "",
+            amount: 0,
+            price: 0
+        });
     };
-    resetState = {
-        name: "",
-        description: "",
-        amount: 0,
-        price: 0,
-    }
 
     render() {
         const { name, description, amount, price } = this.state;
@@ -52,8 +56,8 @@ class AddStuff extends Component {
                 <h1>Add Stuff</h1><br/>
                 <Form>
                     <FormGroup>
-                        <Label for="name">Name</Label>
-                        <Input type="text" name="name" id="name" value={name} onChange={this.handleNameChange}/>
+                        <Label for="title">Name</Label>
+                        <Input type="text" name="title" id="title" value={name} onChange={this.handleNameChange}/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="description">Description</Label>
