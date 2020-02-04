@@ -1,5 +1,4 @@
-export const REMOVE_STUFF = 'REMOVE_STUFF'; 
-export const ADD_STUFF = 'ADD_STUFF'; 
+import { ADD_STUFF, REMOVE_STUFF } from '../actions/ActionTypes'; 
 
 export function addStuff(data) { 
     return { type: ADD_STUFF, data }; 

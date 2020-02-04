@@ -11,20 +11,20 @@ class Stuff extends Component {
             <div className="row stuff">
                 <div className="col-sm-10">
                     <div className="row">
-                        <div className="col-sm-2">Name:</div>
-                        <div className="col-sm-10">{data.name}</div>
+                        <div className="col-sm-3">Name:</div>
+                        <div className="col-sm-9">{data.name}</div>
                     </div>
                     <div className="row">
-                        <div className="col-sm-2">Description:</div>
-                        <div className="col-sm-10">{data.description}</div>
+                        <div className="col-sm-3">Description:</div>
+                        <div className="col-sm-9">{data.description}</div>
                     </div>
                     <div className="row">
-                        <div className="col-sm-2">Amount:</div>
-                        <div className="col-sm-10">{data.amount}</div>
+                        <div className="col-sm-3">Amount:</div>
+                        <div className="col-sm-9">{data.amount}</div>
                     </div>
                     <div className="row">
-                        <div className="col-sm-2">Price:</div>
-                        <div className="col-sm-10">{data.price}</div>
+                        <div className="col-sm-3">Price:</div>
+                        <div className="col-sm-9">{data.price}</div>
                     </div><br />
                     <div className="row">
                         <div className="col">

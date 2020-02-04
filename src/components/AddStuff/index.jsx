@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { addStuff } from '../../actions';
 import './AddStuff.css';
+import Counter from './Counter';
 
 class AddStuff extends Component {
     state = {
@@ -47,6 +48,14 @@ class AddStuff extends Component {
             price: 0
         });
     };
+    handleIncrease = () => {
+        this.setState({ amount: this.state.amount + 1 });
+    };
+    handleDecrease = () => {
+        if (this.state.amount > 0) {
+            this.setState({ amount: this.state.amount - 1 });
+        }
+    };
 
     render() {
         const { name, description, amount, price } = this.state;
@@ -64,12 +73,12 @@ class AddStuff extends Component {
                         <Input type="textarea" name="description" id="description" value={description} onChange={this.handleDescriptionChange} />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="amount">Amount</Label>
-                        <Input type="number" name="amount" id="amount" placeholder="0" value={amount} onChange={this.handleAmountChange} />
-                    </FormGroup>
-                    <FormGroup>
                         <Label for="price">Price</Label>
                         <Input type="number" name="price" id="price" placeholder="0" value={price} onChange={this.handlePriceChange} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="amount">Amount</Label>
+                        <Counter id="amount" amount={amount} handleDecrease={this.handleDecrease} handleIncrease={this.handleIncrease} />
                     </FormGroup>
                     <br/>
                     <Button color="primary" onClick={this.handleAdd}>Add</Button>

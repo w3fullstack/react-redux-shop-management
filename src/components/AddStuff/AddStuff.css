@@ -1,3 +1,11 @@
 .addstuff {
     /* width: 50%; */
 }
+
+.counter {
+    display: flex;
+}
+.counter .value {
+    font-size: 30px;
+    margin: 0px 20px;
+}
